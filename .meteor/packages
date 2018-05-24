@@ -1,0 +1,62 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base@1.3.0             # Packages every Meteor app needs to have
+mongo@1.4.2                   # The database Meteor supports right now
+tracker@1.1.3                 # Meteor's client-side reactive programming library
+jquery@1.11.10                  # Helpful client-side library
+
+
+random@1.1.0
+meteorhacks:aggregate
+
+es5-shim@4.7.0                # ECMAScript 5 compatibility for older browsers.
+
+accounts-password@1.5.0
+babrahams:constellation
+
+shell-server@0.3.1
+mobile-experience@1.0.5
+ecmascript@0.10.6
+reactive-var@1.0.11
+session@1.1.7
+blaze-html-templates
+lepozepo:cloudinary
+momentjs:moment
+kevohagan:sweetalert
+accounts-base
+matb33:collection-hooks
+
+coffeescript
+juliancwirko:postcss
+less
+froala:editor-reactive@=2.4.2
+semantic:ui
+pacreach:jade
+dburles:collection-helpers
+manuel:reactivearray
+
+
+
+kadira:flow-router
+kadira:blaze-layout
+zimme:active-route
+useraccounts:flow-routing
+raix:handlebar-helpers
+themeteorchef:bert
+mizzao:autocomplete
+useraccounts:semantic-ui
+reywood:publish-composite
+yasinuslu:json-view
+jeremy:geocomplete
+davesierra:fullcalendar
+alanning:roles
+tomwasd:flow-router-autoscroll
+maazalik:highcharts
+maazalik:highcharts-gauge
+clarencel:highcharts-drilldown
+maazalik:highcharts-3d
+http

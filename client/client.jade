@@ -1,0 +1,31 @@
+head
+    title Philanthropiece
+    meta(name='viewport', content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='white')
+    meta(name='google-site-verification', content='6osbddgiRIkUEHj3ezFR6D2yOQuooBvvXsBliSWhAZA')
+    meta(name="theme-color", content="#ffffff")
+
+
+// body 
+//     +home
+
+
+
+template(name='layout')
+    .context.example
+        +nav
+        // .ui.top.attached.demo.menu
+        //     a.item
+        //         i.sidebar.icon
+        //         |     Menu
+        .ui.bottom.attached.basic.segment.pushable
+            // +top_sidebar
+            +left_sidebar
+            +right_sidebar
+            .pusher
+                #main_area
+                    +Template.dynamic template=cloud
+                    +Template.dynamic template=sub_nav
+                    +Template.dynamic template=sub_sub_nav
+                    +Template.dynamic template=main
