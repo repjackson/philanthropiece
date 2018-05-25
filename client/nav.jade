@@ -1,14 +1,14 @@
 template(name='nav')
-    #nav.ui.inverted.icon.top.attached.big.borderless.menu
-        a.toggle_left_sidebar.icon.item 
-            i.bars.icon
+    #nav.ui.icon.top.attached.big.borderless.menu
+        // a.toggle_left_sidebar.icon.item 
+        //     i.bars.icon
         // a.mobile.hidden.icon.item(href='/dashboard' class="{{isActivePath '/dashboard'}}" data-position="top center" data-content='Users')
         //     i.dashboard.icon
-        a.header.item(href='/web' class="{{isActivePath '/web'}}")
-            i.globe.icon
-        if is_admin
-            a.header.item(href='/posts' class="{{isActivePath '/posts'}}" data-position="top center" data-content='posts')
-                i.clipboard.icon
+        a.header.item(href='/' class="{{isActivePath '/'}}")
+            img.ui.avatar.image(src="{{c.url 'phillogo_icon'}}")
+
+        // a.header.item(href='/posts' class="{{isActivePath '/posts'}}" data-position="top center" data-content='posts')
+        //     i.clipboard.icon
             // | Home
         // a.mobile.hidden.icon.item(href='/users' class="{{isActivePath '/users'}}" data-position="top center" data-content='Users')
         //     i.users.icon
@@ -23,8 +23,8 @@ template(name='nav')
         //     // | &nbsp; Offices
         // a.mobile.hidden.icon.item(href='/services' class="{{isActivePath '/services'}}" data-position="top center" data-content='Services/Ecommerce')
         //     i.shipping.fast.icon
-        a.icon.item(href='/reddit' class="{{isActivePath '/reddit'}}" data-position="top center" data-content='reddit')
-            i.reddit.icon
+        // a.icon.item(href='/reddit' class="{{isActivePath '/reddit'}}" data-position="top center" data-content='reddit')
+        //     i.reddit.icon
             // +avatar_sprite name='duster'
         // a.icon.item(href='/feed' class="{{isActivePath '/feed'}}" data-position="top center" data-content='Feed')
         //     i.rss.icon
@@ -69,94 +69,94 @@ template(name='nav')
 
 
 template(name='left_sidebar')
-    #nav.ui.left.vertical.sidebar.inverted.large.menu
-        // a.header.toggle_left_sidebar.item(href='/' class="{{isActivePath '/'}}") 
-        //     i.home.icon
-        //     |Jan-Pro
-        a.toggle_left_sidebar.item(href='/users' class="{{isActivePath '/users'}}" data-position="right center" data-content='Users')
-            i.large.users.icon
-            | Users
-        a.toggle_left_sidebar.item(href='/incidents' class="{{isActivePath '/incidents'}}" data-position="right center" data-content='Incidents')
-            i.large.clipboard.icon
-            | Incidents
-        a.toggle_left_sidebar.item(href='/offices' class="{{isActivePath '/offices'}}" data-position="right center" data-content='Offices')
-            i.large.building.icon
-            | Offices
-        a.toggle_left_sidebar.item(href='/schedule' class="{{isActivePath '/schedule'}}" data-position="right center" data-content='Schedule')
-            i.large.calendar.icon
-            | Schedule
-        a.toggle_left_sidebar.item(href='/services' class="{{isActivePath '/services'}}" data-position="right center" data-content='Services')
-            i.large.clock.icon
-            // +tiny_sprite name='duster'
-            | Services
-            // a.icon.item(href='/dashboard' class="{{isActivePath '/dashboard'}}" data-position="right center" data-content='Charts')
-            //     i.line.chart.icon
-        a.toggle_left_sidebar.item(href='/store' data-position="top center" data-content='Store')
-            i.large.shopping.cart.icon
-            | Store
+//     #nav.ui.left.vertical.sidebar.large.menu
+//         // a.header.toggle_left_sidebar.item(href='/' class="{{isActivePath '/'}}") 
+//         //     i.home.icon
+//         //     |Jan-Pro
+//         a.toggle_left_sidebar.item(href='/users' class="{{isActivePath '/users'}}" data-position="right center" data-content='Users')
+//             i.large.users.icon
+//             | Users
+//         // a.toggle_left_sidebar.item(href='/incidents' class="{{isActivePath '/incidents'}}" data-position="right center" data-content='Incidents')
+//         //     i.large.clipboard.icon
+//         //     | Incidents
+//         // a.toggle_left_sidebar.item(href='/offices' class="{{isActivePath '/offices'}}" data-position="right center" data-content='Offices')
+//         //     i.large.building.icon
+//         //     | Offices
+//         // a.toggle_left_sidebar.item(href='/schedule' class="{{isActivePath '/schedule'}}" data-position="right center" data-content='Schedule')
+//         //     i.large.calendar.icon
+//         //     | Schedule
+//         // a.toggle_left_sidebar.item(href='/services' class="{{isActivePath '/services'}}" data-position="right center" data-content='Services')
+//         //     i.large.clock.icon
+//         //     // +tiny_sprite name='duster'
+//         //     | Services
+//         //     // a.icon.item(href='/dashboard' class="{{isActivePath '/dashboard'}}" data-position="right center" data-content='Charts')
+//         //     //     i.line.chart.icon
+//         // a.toggle_left_sidebar.item(href='/store' data-position="top center" data-content='Store')
+//         //     i.large.shopping.cart.icon
+//         //     | Store
             
-        a.icon.toggle_left_sidebar.item(href='/admin' class="{{isActivePath '/admin'}}" data-position="right center" data-content='Admin')
-            i.large.shield.icon
-            | Admin
-            // a.toggle_sidebar.item(href="/profile/edit/#{currentUser._id}" class="{{isActivePath '/profile/edit/#{currentUser._id}'}}" data-position="right center" data-content='Charts')
-            //     if currentUser.profile.first_name
-            //         | #{currentUser.profile.first_name}
-            //     else
-            //         | #{currentUser.username}
-            //     if currentUser.profile.image_id
-            //         img.ui.avatar.image(src="{{c.url currentUser.profile.image_id width=50 height=50 gravity='face' crop='fill'}}" data-position="right center" data-content='Charts')
-            //     else
-            //         i.user.large.icon
-            // a#logout.ui.toggle_sidebar.item(href='#') 
-            //     i.large.icon
-            //         +mini_sprite name='edit'
-            //     | Sign Out
-        unless currentUser
-            a.ui.toggle_sidebar.item(href='/sign-in') 
-                // i.large.icon
-                //     +mini_sprite name='enter'
-                | Sign In
+//         // a.icon.toggle_left_sidebar.item(href='/admin' class="{{isActivePath '/admin'}}" data-position="right center" data-content='Admin')
+//         //     i.large.shield.icon
+//         //     | Admin
+//             // a.toggle_sidebar.item(href="/profile/edit/#{currentUser._id}" class="{{isActivePath '/profile/edit/#{currentUser._id}'}}" data-position="right center" data-content='Charts')
+//             //     if currentUser.profile.first_name
+//             //         | #{currentUser.profile.first_name}
+//             //     else
+//             //         | #{currentUser.username}
+//             //     if currentUser.profile.image_id
+//             //         img.ui.avatar.image(src="{{c.url currentUser.profile.image_id width=50 height=50 gravity='face' crop='fill'}}" data-position="right center" data-content='Charts')
+//             //     else
+//             //         i.user.large.icon
+//             // a#logout.ui.toggle_sidebar.item(href='#') 
+//             //     i.large.icon
+//             //         +mini_sprite name='edit'
+//             //     | Sign Out
+//         unless currentUser
+//             a.ui.toggle_sidebar.item(href='/sign-in') 
+//                 // i.large.icon
+//                 //     +mini_sprite name='enter'
+//                 | Sign In
 
 
 template(name='right_sidebar')
-    #nav.ui.right.inline.vertical.sidebar.inverted.large.menu
-        a.toggle_right_sidebar.header.item(href="/profile/edit/#{currentUser._id}" class="{{isActivePath '/profile/edit/#{currentUser._id}'}}")
-            img.ui.avatar.spaced.image(src="{{c.url currentUser.profile.image_id width=50 height=50 gravity='face' crop='fill'}}")
-            |#{currentUser.username}
-        a.icon.toggle_right_sidebar.item(href='/ideas' class="{{isActivePath '/ideas'}}")
-            i.lightbulb.large.icon
-            | ideas
-        a.icon.toggle_right_sidebar.item(href='/questions' class="{{isActivePath '/questions'}}")
-            i.question.large.icon
-            | q&a
-        a.icon.toggle_right_sidebar.item(href='/rankings' class="{{isActivePath '/rankings'}}")
-            i.trophy.large.icon
-            | leaderboard
-        a.toggle_right_sidebar.item(href='/alerts')
-            i.bell.large.icon
-            | alerts
-        a.toggle_right_sidebar.item(href='/charts')
-            i.large.line.chart.icon
-            | charts
-        a.toggle_right_sidebar.item(href='/mail')
-            i.envelope.large.icon
-            | mail
-        a.toggle_right_sidebar.item(href='/feed')
-            i.rss.large.icon
-            | feed
-        a.toggle_right_sidebar.item(href='/chat')
-            i.chat.large.icon
-            | chat
-        a.toggle_right_sidebar.item(href='/bookmarks')
-            i.bookmark.large.icon
-            | bookmarks
-        a.toggle_right_sidebar.item(href='/account/settings' class="{{isActivePath '/account/settings'}}") 
-            i.cog.large.icon
-            | settings
-        .divider
-        a.toggle_right_sidebar.item(href='/admin' class="{{isActivePath '/admin'}}")
-            i.shield.large.icon
-            | admin
-        a#logout.ui.item(href='#') 
-            i.right.chevron.icon
-            | leave
+//     #nav.ui.right.inline.vertical.sidebar.large.menu
+//         a.toggle_right_sidebar.header.item(href="/profile/edit/#{currentUser._id}")
+//             img.ui.avatar.spaced.image(src="{{c.url currentUser.profile.image_id width=50 height=50 gravity='face' crop='fill'}}")
+//             |#{currentUser.username}
+//         a.icon.toggle_right_sidebar.item(href='/ideas' class="{{isActivePath '/ideas'}}")
+//             i.lightbulb.large.icon
+//             | ideas
+//         a.icon.toggle_right_sidebar.item(href='/questions' class="{{isActivePath '/questions'}}")
+//             i.question.large.icon
+//             | q&a
+//         a.icon.toggle_right_sidebar.item(href='/rankings' class="{{isActivePath '/rankings'}}")
+//             i.trophy.large.icon
+//             | leaderboard
+//         a.toggle_right_sidebar.item(href='/alerts')
+//             i.bell.large.icon
+//             | alerts
+//         a.toggle_right_sidebar.item(href='/charts')
+//             i.large.line.chart.icon
+//             | charts
+//         a.toggle_right_sidebar.item(href='/mail')
+//             i.envelope.large.icon
+//             | mail
+//         a.toggle_right_sidebar.item(href='/feed')
+//             i.rss.large.icon
+//             | feed
+//         a.toggle_right_sidebar.item(href='/chat')
+//             i.chat.large.icon
+//             | chat
+//         a.toggle_right_sidebar.item(href='/bookmarks')
+//             i.bookmark.large.icon
+//             | bookmarks
+//         a.toggle_right_sidebar.item(href='/account/settings' class="{{isActivePath '/account/settings'}}") 
+//             i.cog.large.icon
+//             | settings
+//         .divider
+//         a.toggle_right_sidebar.item(href='/admin' class="{{isActivePath '/admin'}}")
+//             i.shield.large.icon
+//             | admin
+//         a#logout.ui.item(href='#') 
+//             i.right.chevron.icon
+//             | leave

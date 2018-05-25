@@ -1,17 +1,17 @@
-template(name='posts')    
+template(name='dps')    
     .ui.stackable.grid
         .four.wide.column
-            +add_button type='post'
+            +add_button type='dp'
             +tag_facet
             // +timestamp_facet
             // +location_facet
         .twelve.wide.column
             // if one_doc
             .ui.cards
-                each posts
-                    +post_card
+                each dps
+                    +dp_card
     
-template(name='post_card')
+template(name='dp_card')
     .ui.fluid.card
         a.image(href="/view/#{_id}")
             img.ui.rounded.image(src="{{c.url image_id  width=300 height=300 crop='fill' }}")
@@ -54,13 +54,13 @@ template(name='table_view')
         
         
         
-template(name='post_view')
+template(name='dp_view')
     .ui.padded.stackable.centered.grid
         .centered.row
             .three.wide.center.aligned.column
                 +link_button link='/' label='home' icon='home'
             .ten.wide.center.aligned.column
-                h1.ui.header view post
+                h1.ui.header view dp
             .three.wide.center.aligned.column
                 +edit_button
         .row
@@ -126,11 +126,11 @@ template(name='post_view')
             .ui.bottom.attached.tab.segment(data-tab='analysis')
                 +watson_view        
         
-template(name='post_edit')
+template(name='dp_edit')
     .ui.stackable.padded.grid
         .row
             .four.wide.column
-                .ui.center.aligned.header edit post
+                .ui.center.aligned.header edit dp
                 a.ui.icon.large.fluid.button(href="/view/#{_id}")
                     i.checkmark.icon
                 #delete.ui.icon.button

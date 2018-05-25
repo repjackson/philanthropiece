@@ -62,6 +62,13 @@ Template.registerHelper 'is_admin', () ->
     if Meteor.user() and Meteor.user().roles
         'admin' in Meteor.user().roles
 
+$.cloudinary.config
+    cloud_name:"facet"
+
+FlowRouter.notFound =
+    action: ->
+        BlazeLayout.render 'layout', 
+            main: 'dps'
 
 
 # Meteor.startup ->

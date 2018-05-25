@@ -1,10 +1,10 @@
 
-Session.setDefault 'view_mode', 'post_view'
+Session.setDefault 'view_mode', 'dp_view'
 
-FlowRouter.route '/posts', action: (params) ->
+FlowRouter.route '/dps', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
-        main: 'posts'
+        main: 'dps'
 
 
 Template.view_toggle.events
@@ -17,7 +17,7 @@ Template.view_toggle_item.events
         # console.log @name
 
 
-Template.posts.onCreated ->
+Template.dps.onCreated ->
     @autorun => 
         Meteor.subscribe('facet', 
             selected_tags.array()
@@ -27,17 +27,17 @@ Template.posts.onCreated ->
             selected_author_ids.array()
             selected_location_tags.array()
             selected_timestamp_tags.array()
-            type='post'
+            type='dp'
             author_id=null
         )
         # Meteor.subscribe 'doc', Session.get('editing_id')
 
-Template.posts.helpers
+Template.dps.helpers
     one_doc: -> Docs.find().count() is 1
     view_mode: -> Session.get 'view_mode'
     viewing_table: -> Session.equals 'view_mode','table'
     editing_id: -> Session.get 'editing_id'
-    posts: -> Docs.find({},{limit:5,sort:timestamp:-1})
+    dps: -> Docs.find({},{limit:5,sort:timestamp:-1})
 
 
 Template.table_view.helpers
@@ -47,7 +47,7 @@ Template.table_view.helpers
 
     # is_editing: -> Session.get 'editing_id'
 
-Template.post_view.onRendered ->
+Template.dp_view.onRendered ->
     # Meteor.setTimeout ->
     #     $('.ui.checkbox').checkbox()
     # #     $('.ui.tabular.menu .item').tab()
