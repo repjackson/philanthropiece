@@ -65,10 +65,10 @@ Template.registerHelper 'is_admin', () ->
 $.cloudinary.config
     cloud_name:"facet"
 
-FlowRouter.notFound =
-    action: ->
-        BlazeLayout.render 'layout', 
-            main: 'dps'
+# FlowRouter.notFound =
+#     action: ->
+#         BlazeLayout.render 'layout', 
+#             main: 'dps'
 
 
 # Meteor.startup ->

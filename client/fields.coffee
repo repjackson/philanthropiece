@@ -113,7 +113,7 @@ Template.edit_text_field.events
             { $set: "#{@key}": text_value }
             , (err,res)=>
                 if err
-                    Bert.alert "Error Updating #{@label}: #{error.reason}", 'danger', 'growl-top-right'
+                    Bert.alert "Error Updating #{@label}: #{err.reason}", 'danger', 'growl-top-right'
                 else
                     Bert.alert "Updated #{@label}", 'success', 'growl-top-right'
 

@@ -1,13 +1,13 @@
 @Tags = new Meteor.Collection 'tags'
 @Docs = new Meteor.Collection 'docs'
-@People_tags = new Meteor.Collection 'people_tags'
+# @People_tags = new Meteor.Collection 'people_tags'
 
 # @Ancestor_ids = new Meteor.Collection 'ancestor_ids'
 @Location_tags = new Meteor.Collection 'location_tags'
 # @Intention_tags = new Meteor.Collection 'intention_tags'
 @Timestamp_tags = new Meteor.Collection 'timestamp_tags'
-@Watson_keywords = new Meteor.Collection 'watson_keywords'
-@Watson_concepts = new Meteor.Collection 'watson_concepts'
+# @Watson_keywords = new Meteor.Collection 'watson_keywords'
+# @Watson_concepts = new Meteor.Collection 'watson_concepts'
 @Author_ids = new Meteor.Collection 'author_ids'
 # @Participant_ids = new Meteor.Collection 'participant_ids'
 # @Upvoter_ids = new Meteor.Collection 'upvoter_ids'
@@ -23,16 +23,16 @@ FlowRouter.route '/', action: ->
 
 
 
-Meteor.users.helpers
-    name: -> 
-        if @profile?.display_name
-            "#{@profile.display_name}"
-        else
-            "#{@username}"
-    last_login: -> 
-        moment(@status?.lastLogin.date).fromNow()
+# Meteor.users.helpers
+#     name: -> 
+#         if @profile?.display_name
+#             "#{@profile.display_name}"
+#         else
+#             "#{@username}"
+#     last_login: -> 
+#         moment(@status?.lastLogin.date).fromNow()
 
-    five_tags: -> if @tags then @tags[0.3]
+#     five_tags: -> if @tags then @tags[0.3]
 
             
 Docs.before.insert (userId, doc)=>

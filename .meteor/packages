@@ -44,16 +44,11 @@ manuel:reactivearray
 kadira:flow-router
 kadira:blaze-layout
 zimme:active-route
-useraccounts:flow-routing
 raix:handlebar-helpers
 themeteorchef:bert
 mizzao:autocomplete
-useraccounts:semantic-ui
 reywood:publish-composite
 yasinuslu:json-view
-jeremy:geocomplete
-davesierra:fullcalendar
-alanning:roles
 tomwasd:flow-router-autoscroll
 maazalik:highcharts
 maazalik:highcharts-gauge

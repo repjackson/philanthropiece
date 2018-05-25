@@ -2,7 +2,6 @@ Template.tasks.onCreated ->
     @autorun => 
         Meteor.subscribe('facet', 
         selected_tags.array()
-        selected_keywords.array()
         selected_author_ids.array()
         selected_location_tags.array()
         selected_timestamp_tags.array()
@@ -13,7 +12,6 @@ Template.tasks.onCreated ->
 FlowRouter.route '/tasks', action: (params) ->
     BlazeLayout.render 'layout',
         nav: 'nav'
-        sub_nav: 'admin_nav'
         main: 'tasks'
 
 
@@ -38,14 +36,14 @@ Template.tasks.events
         
         
 
-Template.task_item.onCreated ->
+Template.task_card.onCreated ->
     @autorun -> Meteor.subscribe 'doc', Session.get('editing_id')
 
-Template.task_item.helpers
+Template.task_card.helpers
     doc: -> Docs.findOne Session.get('editing_id')
     
     
-Template.task_item.events
+Template.task_card.events
     'click #delete': ->
         swal {
             title: 'Delete task?'
